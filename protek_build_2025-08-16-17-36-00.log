@@ -1,0 +1,13 @@
+[1m╔════════════════════════════════════════════════════╗[0m
+[1m║               ProTek v50 - Instalacja              ║[0m
+[1m╚════════════════════════════════════════════════════╝[0m
+Rozpoczęcie: 2025-08-16 20:26:44
+Użytkownik: Fervv268zbuduj
+Log: protek_build_2025-08-16-17-36-00.log
+
+[0;34m[INFO][0m Sprawdzanie środowiska...
+[0;34m[INFO][0m Wykryta architektura: x86_64
+[0;33m[UWAGA][0m Ten skrypt jest zoptymalizowany dla Ubuntu/Debian. Niektóre polecenia mogą nie działać.
+[0;34m[INFO][0m Instalowanie zależności systemowych...
+[0;34m[INFO][0m Aktualizowanie repozytoriów pakietów...
+Sudo is disabled on this machine. To enable it, go to the ]8;;ms-settings:developers\Developer Settings page]8;;\ in the Settings app
