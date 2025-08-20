@@ -1,0 +1,48 @@
+# ProTek v999 - Docker Commands
+
+## Basic Commands
+
+# Pull PostgreSQL SSL template
+docker pull ghcr.io/railwayapp-templates/postgres-ssl:latest
+
+## Container Management
+
+# Run PostgreSQL container
+docker run -d \
+  --name protek-postgres \
+  -e POSTGRES_DB=protek \
+  -e POSTGRES_USER=protek_user \
+  -e POSTGRES_PASSWORD=protek_pass \
+  -p 5432:5432 \
+  ghcr.io/railwayapp-templates/postgres-ssl:latest
+
+# Check running containers
+docker ps
+
+# View container logs
+docker logs protek-postgres
+
+# Stop container
+docker stop protek-postgres
+
+# Remove container
+docker rm protek-postgres
+
+## Image Management
+
+# List all images
+docker images
+
+# Remove image
+docker rmi ghcr.io/railwayapp-templates/postgres-ssl:latest
+
+# Clean up unused images
+docker image prune -f
+
+## Development Commands
+
+# Build custom ProTek image (future use)
+# docker build -t protek:v999 .
+
+# Run ProTek container (future use)  
+# docker run -d --name protek-app -p 8080:8080 protek:v999

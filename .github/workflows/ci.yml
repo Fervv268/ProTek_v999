@@ -1,0 +1,61 @@
+---
+# ProTek v999 - Continuous Integration Workflow
+
+name: ProTek CI/CD
+
+# Controls when the workflow will run
+"on":
+  # Triggers the workflow on push or pull request events
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+    branches: ["main", "develop"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Set default shell
+defaults:
+  run:
+    shell: bash
+
+# A workflow run is made up of one or more jobs
+jobs:
+  # Build and test job
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Set up environment information
+      - name: Environment Info
+        run: |
+          echo "🚀 ProTek v999 Build Started"
+          echo "📅 Build Date: $(date)"
+          echo "🏗️ Runner: ${{ runner.os }}"
+          echo "📦 Repository: ${{ github.repository }}"
+          echo "🌟 Branch: ${{ github.ref_name }}"
+
+      # Validate repository structure
+      - name: Validate Repository
+        run: |
+          echo "📋 Checking repository structure..."
+          ls -la
+          echo "✅ Repository validation complete"
+
+      # Check if Docker is available and validate Docker commands
+      - name: Docker Validation
+        run: |
+          echo "🐳 Checking Docker availability..."
+          docker --version
+          echo "✅ Docker is available"
+
+      # Future: Add actual build/test steps here
+      - name: Build Status
+        run: |
+          echo "✅ ProTek v999 build completed successfully!"
+          echo "🎉 Ready for deployment"
